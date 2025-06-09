@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Righteous&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="Styles/reset.css">
+    <link rel="stylesheet" href="Styles/general.css">
+    <link rel="stylesheet" href="Styles/sidebar.css">
+    <link rel="stylesheet" href="Styles/dashboard.css">
+    <script src="JavaScript/navHighlight.js"></script>
+    <script src="https://kit.fontawesome.com/c3ea5278a0.js" crossorigin="anonymous"></script>
+
+    <style>
+
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.btn-sidebar').addEventListener('click', () => {
+                document.querySelector('.sidebar-top').classList.toggle('collapsed');
+                document.querySelector('.sidebar-bottom').classList.toggle('collapsed');
+                document.querySelector('body').classList.toggle('body-collapsed');
+                const btn = document.querySelector('.btn-sidebar');
+                const isCollapsed = document.querySelector('.sidebar-top').classList.contains('collapsed')
+                btn.classList.toggle('active', isCollapsed);
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="sidebar">
+        <aside class="sidebar-top ">
+            <img src="Icon/Logo Icon.svg" alt="Logo Voture" class="icon-voture" />
+            <div class="heading-voture text">VOTURE</div>
+            <button class="btn-sidebar">X</button>
+        </aside>
+        <aside class="sidebar-bottom">
+            <nav>
+                <div class="heading-dashboard text">Dashboard</div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link home"><i class="fa-solid fa-house"></i>
+                            <div class="text">Home</div>
+                        </a></li>
+                    <li><a href="database.html" class="nav-link database"><i class="fa-solid fa-database"></i>
+                            <div class="text"> Database</div>
+                        </a></li>
+                    <li><a href="dataInput.html" class="nav-link data-input"><i class="fa-solid fa-pen-to-square"></i>
+                            <div class="text"> Data Input</div>
+                        </a></li>
+                    <li><a href="report.html" class="nav-link report"><i class="fa-solid fa-clipboard-list"></i>
+                            <div class="text"> Report</div>
+                        </a></li>
+                </ul>
+
+
+            </nav>
+
+        </aside>
+    </div>
+
+    <header class="content-heading-container">
+        <h1 class="content-heading">Welcome back, John</h1>
+        <h3 class="content-subheading">Lorem Ipsum Dior Ist gut</h3>
+    </header>
+    <div class="mainComponent"></div>
+    <div class="content-layout1">
+        <section class="container-voteStatus">
+            <header class="header-voteStatus">
+                <div class="section-header">
+                    <img src="Icon/VoteStatus Icon.svg" alt="Vote Status Icon" class="icon-margin-right">
+                    Status
+                </div>
+                <nav class="nav-voteStatus">
+                    <div class="nav-item active">
+                        <div class="nav-label">Voting Status</div>
+                        <div class="nav-tubelight"></div>
+                    </div>
+                    <div class="nav-item">
+                        <div class="nav-label">Ruang Suara</div>
+                        <div class="nav-tubelight"></div>
+                    </div>
+                </nav>
+            </header>
+            <div class="content-voteStatus">
+                <div class="statBlock">
+                    <div class="statBlock-content1">1300
+                        <img src="Icon/SuratSuara Icon.svg" alt="Surat Suara Icon" class="suratSuara-icon">
+                    </div>
+                    <div class="statBlock-content2">
+                        <div class="statBlock-content-label">Surat Suara</div>
+                    </div>
+                </div>
+                <div class="statBlock">
+                    <div class="statBlock-content1">600
+                        <img src="Icon/LakiLaki Icon.svg" alt="Laki Laki Icon" class="lakiLaki-icon">
+                    </div>
+                    <div class="statBlock-content2">
+                        <div class="statBlock-content-label">Laki - Laki</div>
+                    </div>
+                </div>
+                <div class="statBlock">
+                    <div class="statBlock-content1">600
+                        <img src="Icon/Perempuan Icon.svg" alt="Perempuan Icon" class="perempuan-icon">
+                    </div>
+                    <div class="statBlock-content2">
+                        <div class="statBlock-content-label">Perempuan</div>
+                    </div>
+                </div>
+                <div class="statBlock">
+                    <div class="statBlock-content1">100
+                        <img src="Icon/SuaraSementara Icon.svg" alt="" class="suaraSementara-icon">
+                    </div>
+                    <div class="statBlock-content2">
+                        <div class="statBlock-content-label">Suara Sementar</div>
+                    </div>
+                </div>
+                <div class="statBlock">
+                    <div class="statBlock-content1">1200
+                        <img src="Icon/SuratBelumTerpakai Icon.svg" alt="Surat Suara Belum Terpakai" class="suratBelumTerpakai-icon">
+                    </div>
+                    <div class="statBlock-content2">
+                        <div class="statBlock-content-label">Surat Suara Belum Terpakai </div>
+                    </div>
+                </div>
+                <div class="statBlock">
+                    <div class="statBlock-content1">40%
+                        <img src="Icon/Presentase Icon.svg" alt="Presentase Icon" class="presentase-icon">
+                    </div>
+                    <div class="statBlock-content2">
+                        <div class="statBlock-content-label">Persentase</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container-statusBilik">
+            <header class="header-statusBilik">
+                <h2 class="section-header">
+                    <img src="icon/StatusBilik Icon.svg" alt="" class="statusBilik-icon">
+                    Status Bilik
+                </h2>
+            </header>
+            <div class="table-container">
+                <div class="table-header">
+                    <div class="col-no">No</div>
+                    <div class="col-id">ID</div>
+                    <div class="col-pemilih">Pemilih</div>
+                    <div class="col-jenis">Jenis</div>
+                    <div class="col-waktuBerlalu">Waktu berlalu</div>
+                    <div class="col-status">Status</div>
+                </div>
+                <ul class="table-list">
+                    <li>
+                        <span class="col-no">1</span>
+                        <span class="col-id">V001</span>
+                        <span class="col-pemilih">John Doe</span>
+                        <span class="col-jenis">Reguler</span>
+                        <span class="col-waktuBerlalu">00:02:15</span>
+                        <span class="col-status">Active</span>
+                    </li>
+                    <li>
+                        <span class="col-no">2</span>
+                        <span class="col-id">V002</span>
+                        <span class="col-pemilih">Jane Smith</span>
+                        <span class="col-jenis">VIP</span>
+                        <span class="col-waktuBerlalu">00:01:40</span>
+                        <span class="col-status">Pending</span>
+                    </li>
+                    <li>
+                        <span class="col-no">3</span>
+                        <span class="col-id">V003</span>
+                        <span class="col-pemilih">Peter Jones</span>
+                        <span class="col-jenis">Reguler</span>
+                        <span class="col-waktuBerlalu">00:03:00</span>
+                        <span class="col-status">Active</span>
+                    </li>
+                    <li>
+                        <span class="col-no">4</span>
+                        <span class="col-id">V004</span>
+                        <span class="col-pemilih">Alice Brown</span>
+                        <span class="col-jenis">VIP</span>
+                        <span class="col-waktuBerlalu">00:00:55</span>
+                        <span class="col-status">Done</span>
+                    </li>
+                    <li>
+                        <span class="col-no">5</span>
+                        <span class="col-id">V005</span>
+                        <span class="col-pemilih">Robert Green</span>
+                        <span class="col-jenis">Reguler</span>
+                        <span class="col-waktuBerlalu">00:02:30</span>
+                        <span class="col-status">Active</span>
+                    </li>
+                    <li>
+                        <span class="col-no">6</span>
+                        <span class="col-id">V006</span>
+                        <span class="col-pemilih">Emily White</span>
+                        <span class="col-jenis">Reguler</span>
+                        <span class="col-waktuBerlalu">00:01:10</span>
+                        <span class="col-status">Done</span>
+                    </li>
+                    <li>
+                        <span class="col-no">7</span>
+                        <span class="col-id">V007</span>
+                        <span class="col-pemilih">Michael Black</span>
+                        <span class="col-jenis">VIP</span>
+                        <span class="col-waktuBerlalu">00:00:45</span>
+                        <span class="col-status">Pending</span>
+                    </li>
+                    <li>
+                        <span class="col-no">8</span>
+                        <span class="col-id">V008</span>
+                        <span class="col-pemilih">Sarah Blue</span>
+                        <span class="col-jenis">Reguler</span>
+                        <span class="col-waktuBerlalu">00:01:05</span>
+                        <span class="col-status">Active</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <div class="content-layout2">
+        <section class="container-dataPemilihan">
+            <header class="header-dataPemilihan">
+                <div class="section-header">
+                    <img src="Icon/DataPemilihan Icon.svg" alt="Data Pemilihan Icon" class="icon-margin-right">
+                    Data Pemilihan
+                </div>
+            </header>
+            <div class="table-container">
+                <div class="table-header">
+                    <div class="col-dape-no">No</div>
+                    <div class="col-dape-id">ID</div>
+                    <div class="col-dape-nama">Nama</div>
+                    <div class="col-dape-kelas">Kelas</div>
+                    <div class="col-dape-jenis">Jenis</div>
+                    <div class="col-dape-waktu">Waktu</div>
+                    <div class="col-dape-status">Status</div>
+                </div>
+                <ul class="list-dataPemilihan">
+                    <li>
+                        <span class="col-dape-no">10</span>
+                        <span class="col-dape-id">P001</span>
+                        <span class="col-dape-nama">Amanda Garcia</span>
+                        <span class="col-dape-kelas">X MIPA 1</span>
+                        <span class="col-dape-jenis">Online</span>
+                        <span class="col-dape-waktu">10:30:00</span>
+                        <span class="col-dape-status">Selesai</span>
+                    </li>
+                    <li>
+                        <span class="col-dape-no">9</span>
+                        <span class="col-dape-id">P002</span>
+                        <span class="col-dape-nama">Bryan Davis</span>
+                        <span class="col-dape-kelas">XI IPS 2</span>
+                        <span class="col-dape-jenis">Offline</span>
+                        <span class="col-dape-waktu">10:35:10</span>
+                        <span class="col-dape-status">Pending</span>
+                    </li>
+                    <li>
+                        <span class="col-dape-no">8</span>
+                        <span class="col-dape-id">P003</span>
+                        <span class="col-dape-nama">Catherine Lee</span>
+                        <span class="col-dape-kelas">XII MIPA 3</span>
+                        <span class="col-dape-jenis">Online</span>
+                        <span class="col-dape-waktu">10:40:05</span>
+                        <span class="col-dape-status">Selesai</span>
+                    </li>
+                    <li>
+                        <span class="col-dape-no">7</span>
+                        <span class="col-dape-id">P004</span>
+                        <span class="col-dape-nama">David Kim</span>
+                        <span class="col-dape-kelas">X Bahasa 1</span>
+                        <span class="col-dape-jenis">Offline</span>
+                        <span class="col-dape-waktu">10:45:30</span>
+                        <span class="col-dape-status">Trouble</span>
+                    </li>
+                    <li>
+                        <span class="col-dape-no">6</span>
+                        <span class="col-dape-id">P005</span>
+                        <span class="col-dape-nama">Ella Rodriguez</span>
+                        <span class="col-dape-kelas">XI MIPA 4</span>
+                        <span class="col-dape-jenis">Online</span>
+                        <span class="col-dape-waktu">10:50:00</span>
+                        <span class="col-dape-status">Selesai</span>
+                    </li>
+                    <li>
+                        <span class="col-dape-no">5</span>
+                        <span class="col-dape-id">P006</span>
+                        <span class="col-dape-nama">Frank Miller</span>
+                        <span class="col-dape-kelas">XII IPS 1</span>
+                        <span class="col-dape-jenis">Offline</span>
+                        <span class="col-dape-waktu">10:55:15</span>
+                        <span class="col-dape-status">Pending</span>
+                    </li>
+                    <li>
+                        <span class="col-dape-no">4</span>
+                        <span class="col-dape-id">P007</span>
+                        <span class="col-dape-nama">Grace Wilson</span>
+                        <span class="col-dape-kelas">X MIPA 2</span>
+                        <span class="col-dape-jenis">Online</span>
+                        <span class="col-dape-waktu">11:00:00</span>
+                        <span class="col-dape-status">Selesai</span>
+                    </li>
+                    <li>
+                        <span class="col-dape-no">3</span>
+                        <span class="col-dape-id">P008</span>
+                        <span class="col-dape-nama">Henry Thomas</span>
+                        <span class="col-dape-kelas">XI Bahasa 2</span>
+                        <span class="col-dape-jenis">Offline</span>
+                        <span class="col-dape-waktu">11:05:40</span>
+                        <span class="col-dape-status">Trouble</span>
+                    </li>
+                    <li>
+                        <span class="col-dape-no">2</span>
+                        <span class="col-dape-id">P009</span>
+                        <span class="col-dape-nama">Ivy Moore</span>
+                        <span class="col-dape-kelas">XII MIPA 1</span>
+                        <span class="col-dape-jenis">Online</span>
+                        <span class="col-dape-waktu">11:10:00</span>
+                        <span class="col-dape-status">Selesai</span>
+                    </li>
+                    <li>
+                        <span class="col-dape-no">1</span>
+                        <span class="col-dape-id">P010</span>
+                        <span class="col-dape-nama">Jack Taylor</span>
+                        <span class="col-dape-kelas">X IPS 3</span>
+                        <span class="col-dape-jenis">Offline</span>
+                        <span class="col-dape-waktu">11:15:20</span>
+                        <span class="col-dape-status">Pending</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,205 @@
+.sidebar {
+  width: 371px;
+}
+.sidebar-close {
+  width: 90px;
+}
+.sidebar-top.collapsed,
+.sidebar-bottom.collapsed {
+  width: 90px;
+  transition: all 0.5s;
+  transition-delay: 0s;
+}
+.text,
+.heading-voture {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition-delay: 0.3s;
+}
+
+.sidebar-bottom.collapsed .text,
+.sidebar-top.collapsed .heading-voture {
+  opacity: 0;
+  visibility: hidden;
+  transition-delay: 0s;
+}
+.body-collapsed {
+  margin-left: 90px;
+  transition: all 0.5s;
+}
+.btn-sidebar {
+  background-color: #6C71FF;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  right: -20px;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  border-style: none;
+  color: #ffffff;
+}
+
+.btn-sidebar:active{
+  background-color: #ffff;
+  color: #6C71FF;
+}
+.btn-sidebar.active{
+   background-color: #ffff;
+  color: #6C71FF;
+}
+.btn-sidebar:hover{
+  border-style: solid;
+  border-color: white;
+}
+
+.sidebar-top {
+  transition: width 0.5s ease;
+  background-color: var(--secondary-bg);
+  border-right: 1px solid #213e4c;
+  border-bottom: 1px solid #213e4c;
+  position: fixed;
+  width: 371px;
+  height: 99px;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+.icon-voture {
+  margin-left: 20px;
+}
+
+.sidebar-bottom {
+  transition: width 0.5s ease;
+  position: fixed;
+  top: 99px;
+  left: 0;
+  width: 371px;
+  height: calc(100vh - 99px);
+  background-color: var(--secondary-bg);
+  border-right: 1px solid #213e4c;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-top: 20px;
+  z-index: 1;
+}
+
+.nav-links {
+  list-style: none;
+  padding-left: 10px;
+  margin-right: 10px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  position: relative;
+  bottom: 0px;
+  font-size: 20px;
+  color: var(--text-tertiary);
+  height: 40px;
+  width: 100%;
+  padding-left: 20px;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  background-repeat: no-repeat;
+  background-position: 15px center;
+  background-size: 22px;
+  transition: all 0.25s ease;
+}
+.fa-clipboard-list,
+.fa-house,
+.fa-database,
+.fa-pen-to-square {
+  margin-right: 10px;
+  font-size: 24px;
+}
+.nav-link:hover {
+  color: var(--accent-blue);
+  background-color: #103149;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  position: relative;
+  bottom: 5px;
+}
+
+.nav-link.active {
+  color: var(--accent-blue);
+  position: relative;
+  bottom: 5px;
+  background-color: #103149;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Icon-specific styles */
+
+/* Media queries for sidebar responsiveness - these remain for responsiveness */
+@media (max-width: 1200px) {
+  .sidebar-top,
+  .sidebar-bottom {
+    width: 280px; /* Smaller width for tablets */
+  }
+  .nav-link {
+    width: 220px; /* Adjust link width */
+    font-size: 18px;
+    padding-left: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar-top {
+    position: relative; /* Make sidebar top static for mobile */
+    width: 100%; /* Full width */
+    height: 80px; /* Slightly shorter */
+    padding-left: 20px;
+    border-right: none; /* Remove border */
+  }
+
+  .sidebar-bottom {
+    position: relative; /* Make sidebar bottom static for mobile */
+    top: 0; /* Align directly after sidebar-top */
+    width: 100%; /* Full width */
+    height: auto; /* Height adapts to content */
+    border-right: none; /* Remove border */
+    padding-top: 10px;
+  }
+
+  .heading-dashboard {
+    text-align: center;
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap; /* Allow links to wrap */
+    justify-content: center; /* Center the links */
+    padding-left: 0; /* Remove left padding */
+  }
+
+  .nav-link {
+    width: 45%; /* Two links per row */
+    max-width: 180px; /* Max width for each link */
+    height: 35px;
+    font-size: 16px;
+    padding-left: 10px; /* Adjust padding for smaller width */
+    background-position: 5px center; /* Adjust icon position */
+    background-size: 20px;
+    margin: 5px; /* Add margin around links */
+    justify-content: center; /* Center text within the link */
+  }
+  .icon-watermark {
+    display: none; /* Hide watermark on small screens to save space */
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-link {
+    width: 90%; /* One link per row for very small screens */
+    max-width: 250px; /* Max width for single link */
+  }
+}
