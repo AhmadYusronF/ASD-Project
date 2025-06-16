@@ -1,0 +1,33 @@
+:root {
+  --highlight-color: #00a6c0;
+  --base-color: #141e3c;
+  --body-gradient: linear-gradient(160deg, #0a0e23 0%, #030815 100%);
+  --card-background: #1c2a5438;
+  --card-border-color: #1c2a5438; /* Optional if needed separately */
+  --text-primary: white;
+  --text-secondary: rgb(148, 163, 184);
+  --button-primary-background: #00e1ff86;
+  --button-primary-shadow: #14383d;
+
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: var(--body-gradient);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.page-heading {
+  font-family: "Righteous", cursive;
+}
