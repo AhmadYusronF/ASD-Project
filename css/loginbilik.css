@@ -1,39 +1,20 @@
-@import url(global.css);
+@import "./global.css";
 
-.background-shape {
-  position: absolute;
-  border-radius: 9999px;
-  opacity: 0.7;
-  filter: blur(140px);
-  background: linear-gradient(to right, #8a2be2, #4169e1);
-  z-index: 0;
+body {
+  overflow-y: auto !important; /* Allow vertical scroll */
 }
 
-/* --- Login Card and Form Styles --- */
-.login-form-container {
-  background-image: url(../images/background-image.svg);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--card-border-color);
+
+.status-glow-green {
+  box-shadow: 0 0 8px 2px rgba(34, 197, 94, 0.5);
+}
+.status-glow-red {
+  box-shadow: 0 0 8px 2px rgba(239, 68, 68, 0.5);
 }
 
-.form-input {
-  background-color: transparent;
-  border: 1px solid var(--text-secondary);
-  color: #e0e7ff;
-  transition: border-color 0.3s ease;
-}
+/* Custom card hover effects */
 
-.form-input:focus {
-  outline: none;
-  border-color: var(--highlight-color);
-}
-
-.instruction-text {
-  color: var(--text-secondary);
-}
-
-/* --- Button Styles --- */
-.primary-button {
+.button-primary {
   position: relative;
   overflow: hidden;
   background-color: var(--button-primary-background);
@@ -47,7 +28,7 @@
   transition: transform 0.1s ease, box-shadow 0.3s ease;
 }
 
-.primary-button::before {
+.button-primary::before {
   content: "";
   position: absolute;
   top: 0;
@@ -63,15 +44,15 @@
   transition: left 0.6s ease;
 }
 
-.primary-button:hover {
+.button-primary:hover:not(:disabled) {
   box-shadow: 0 4px var(--button-primary-shadow), 0 0 20px 1px #34b1c262;
 }
 
-.primary-button:hover::before {
+.button-primary:hover:not(:disabled)::before {
   left: 100%;
 }
 
-.primary-button:active {
+.button-primary:active:not(:disabled) {
   transform: translateY(4px);
   box-shadow: 0 0px var(--button-primary-shadow);
 }

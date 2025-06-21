@@ -54,6 +54,7 @@
 #timer-display {
   color: var(--highlight-color);
 }
+
 .button-primary {
   position: relative;
   overflow: hidden;
