@@ -43,16 +43,36 @@
 }
 
 :root {
-  --highlight-color: #00a6c0;
-  --base-color: #141e3c;
-  --body-gradient: linear-gradient(160deg, #0a0e23 0%, #030815 100%);
-  --card-background: #1c2a5438;
-  --card-border-color: #1c2a5438; /* Optional if needed separately */
-  --text-primary: white;
-  --text-secondary: rgb(148, 163, 184);
-  --button-primary-background: #00e1ff86;
-  --button-primary-shadow: #14383d;
+  /* --- Core Palette --- */
+  --color-brand-primary: #00b8d4; /* A slightly brighter, more vibrant cyan for key highlights */
+  --color-brand-secondary: #00e1ff; /* A lighter version for interactive states like hover */
 
+  /* --- Backgrounds & Surfaces --- */
+  --surface-background: #030815; /* The darkest color, used for the main body background */
+  --surface-1: #0a0e23; /* A slightly lighter dark blue for layered surfaces */
+  --surface-2: #1c2a54; /* The color for cards, modals, and elevated elements */
+  --surface-gradient: linear-gradient(
+    160deg,
+    var(--surface-1) 0%,
+    var(--surface-background) 100%
+  );
+
+  /* --- Text --- */
+  --text-primary: #f8fafc; /* Using a slightly off-white (slate-50) is often softer on the eyes */
+  --text-secondary: #94a3b8; /* Slate 400 - WCAG AA compliant on --surface-2 */
+  --text-brand: var(--color-brand-primary);
+
+  /* --- Borders --- */
+  --border-subtle: #ffffff1a; /* A subtle white with alpha for dividing lines */
+  --border-interactive: #ffffff3d; /* A slightly stronger border for interactive element outlines */
+
+  /* --- Buttons & Interactive Elements --- */
+  --interactive-primary-background: var(--color-brand-primary);
+  --interactive-primary-text: #030815; /* High contrast against the button background */
+  --interactive-primary-hover-background: var(--color-brand-secondary);
+  --interactive-shadow: 0 4px 14px 0 #005a6980; /* A more defined shadow using brand color */
+
+  /* --- Font --- */
   font-family: "Poppins", sans-serif;
 }
 
@@ -63,12 +83,8 @@ body {
 }
 
 body {
-  background: var(--body-gradient);
+  background: var(--surface-gradient);
   color: var(--text-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem;
   font-family: "Poppins", sans-serif;
 }
 

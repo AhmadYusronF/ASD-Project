@@ -1,24 +1,67 @@
 @import url(global.css);
 
+:root {
+  /* --- Core Palette --- */
+  --color-brand-primary: #00b8d4; /* A slightly brighter, more vibrant cyan for key highlights */
+  --color-brand-secondary: #00e1ff; /* A lighter version for interactive states like hover */
+
+  /* --- Backgrounds & Surfaces --- */
+  --surface-background: #030815; /* The darkest color, used for the main body background */
+  --surface-1: #0a0e23; /* A slightly lighter dark blue for layered surfaces */
+  --surface-2: #1c2a54; /* The color for cards, modals, and elevated elements */
+  --surface-gradient: linear-gradient(
+    160deg,
+    var(--surface-1) 0%,
+    var(--surface-background) 100%
+  );
+
+  /* --- Text --- */
+  --text-primary: #f8fafc; /* Using a slightly off-white (slate-50) is often softer on the eyes */
+  --text-secondary: #94a3b8; /* Slate 400 - WCAG AA compliant on --surface-2 */
+  --text-brand: var(--color-brand-primary);
+
+  /* --- Borders --- */
+  --border-subtle: #ffffff1a; /* A subtle white with alpha for dividing lines */
+  --border-interactive: #ffffff3d; /* A slightly stronger border for interactive element outlines */
+
+  /* --- Buttons & Interactive Elements --- */
+  --interactive-primary-background: var(--color-brand-primary);
+  --interactive-primary-text: #030815; /* High contrast against the button background */
+  --interactive-primary-hover-background: var(--color-brand-secondary);
+  --interactive-shadow: 0 4px 14px 0 #005a6980; /* A more defined shadow using brand color */
+
+  /* --- Font --- */
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  
+  display: flex;
+  flex-direction: column;   /* Stack items top-to-bottom */
+  justify-content: center;  /* This now centers them vertically */
+  align-items: center;      /* This now centers them horizontally */
+}
 /* --- Candidate Card Styles --- */
 .candidate-card {
-  background-color: var(--card-background);
-  border: 1px solid rgba(235, 235, 235, 0.041);
+  background-color: var(--surface-1);
+  border: 1px solid var(--border-subtle);
   backdrop-filter: blur(10px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .candidate-card:hover {
   transform: translateY(-5px) scale(1.02);
-  border-color: var(--highlight-color);
-  box-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
+  border-color: var(--color-brand-primary);
+  box-shadow: 0 0 15px var(--color-brand-primary);
 }
 
 .vision-mission-box {
-  background-color: rgba(15, 23, 42, 0.6);
+  background-color: var(--surface-1);
   padding: 6px;
   border-radius: 8px;
-  border: 1px solid rgba(51, 65, 85, 0.7);
+  border: 1px solid var(--border-interactive);
   height: 100%;
 }
 
@@ -29,8 +72,8 @@
 }
 
 .modal-dialog {
-  background: var(--body-gradient);
-  border: 1px solid rgba(235, 235, 235, 0.041);
+  background: var(--surface-gradient);
+  border: 1px solid var(--border-subtle);
 }
 
 /* --- Button Styles --- */
@@ -52,20 +95,20 @@
   box-shadow: none;
 }
 #timer-display {
-  color: var(--highlight-color);
+  color: var(--color-brand-secondary);
 }
 
 .button-primary {
   position: relative;
   overflow: hidden;
-  background-color: var(--button-primary-background);
+  background-color: var(--interactive-primary-background);
   color: var(--text-primary);
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
   text-decoration: none;
   font-weight: bold;
   display: inline-block;
-  box-shadow: 0 4px var(--button-primary-shadow);
+  box-shadow: 0 4px var(--interactive-shadow);
   transition: transform 0.1s ease, box-shadow 0.3s ease;
 }
 
@@ -86,7 +129,7 @@
 }
 
 .button-primary:hover:not(:disabled) {
-  box-shadow: 0 4px var(--button-primary-shadow), 0 0 20px 1px #34b1c262;
+  box-shadow: 0 4px var(--interactive-shadow), 0 0 20px 1px #34b1c262;
 }
 
 .button-primary:hover:not(:disabled)::before {
@@ -95,7 +138,7 @@
 
 .button-primary:active:not(:disabled) {
   transform: translateY(4px);
-  box-shadow: 0 0px var(--button-primary-shadow);
+  box-shadow: 0 0px var(--interactive-shadow);
 }
 
 /* --- Utility and Scrollbar Styles --- */
@@ -111,15 +154,15 @@
 }
 
 .modal-scroll-content::-webkit-scrollbar-track {
-  background: #1e293b;
+  background: var(--surface-1);
   border-radius: 10px;
 }
 
 .modal-scroll-content::-webkit-scrollbar-thumb {
-  background: #475569;
+  background: var(--surface-2);
   border-radius: 10px;
 }
 
 .modal-scroll-content::-webkit-scrollbar-thumb:hover {
-  background: #64748b;
+  background: var(--color-brand-primary);
 }

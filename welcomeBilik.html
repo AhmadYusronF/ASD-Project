@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Room Settings Dashboard</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <script src="https://kit.fontawesome.com/c3ea5278a0.js" crossorigin="anonymous"></script>
+   <script src="https://kit.fontawesome.com/c3ea5278a0.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="css/global.css">
-
-    <link rel="stylesheet" href="css/tailwind.css">
-
-    <link rel="stylesheet" href="css/loginBilik.css">
+    <link rel="stylesheet" href="css/welcomeBilik.css">
 </head>
 
-<body class="text-gray-300 flex justify-center min-h-screen md:items-center">
+<body class="text-gray-300">
 
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-0">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
         <!-- Header Section -->
-        <header class="text-center mb-6">
+        <header class="text-center mb-10">
             <img src="images/Ayo Memilih Icon.svg" alt="Logo" class="mx-auto mb-4 rounded-lg h-20 w-20">
             <h1 class="text-3xl sm:text-4xl font-bold text-white mb-2">Welcome to the Room Settings Page</h1>
             <p class="text-gray-400 max-w-2xl mx-auto text-sm">
@@ -27,174 +27,191 @@
                 Setiap bilik hanya dapat digunakan oleh satu komputer.
                 Status koneksi bilik akan diperbarui secara otomatis.
             </p>
-            <p class="text-xs text-gray-500 mt-2">Status akan diperbarui setiap 10 detik</p>
+            <p class="text-xs text-gray-500 mt-2">Status will be updated every 10 seconds</p>
         </header>
 
         <!-- Grid of Monitoring Cards -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
             <!-- Card 1: Online -->
-            <div class="card bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-4 flex flex-col transition-all duration-300 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/10">
+            <div
+                class="card bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-4 flex flex-col transition-all duration-300 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/10">
                 <div class="flex items-center justify-between mb-3">
                     <h3 class="font-semibold text-base text-white">Ruang Satu</h3>
                     <i class="fas fa-desktop text-gray-400"></i>
                 </div>
-                <div class="text-xs text-gray-400 mb-4 flex items-center">
-                    <i class="fas fa-globe text-gray-400"></i>
-                    <p class="ml-2">129.123.99</p>
+                <div
+                    class="self-start text-sm font-medium mb-4 flex items-center px-2 py-1 rounded-md">
+                    <i class="fas fa-globe mr-2"></i>
+                    <p>129.123.99</p>
                 </div>
                 <div class="mt-auto flex items-center justify-between">
-                     <div class="flex items-center space-x-2">
+                    <div class="flex items-center space-x-2">
                         <div class="w-2.5 h-2.5 rounded-full bg-green-500 status-glow-green"></div>
                         <span class="text-xs font-medium text-green-400">Online</span>
                     </div>
-                    <button class="button-primary text-xs font-semibold text-gray-400 bg-gray-700/50 hover:bg-gray-700 px-3 py-1.5 rounded-lg transition-colors">
+                    <button class="button-primary text-xs font-semibold rounded-lg transition-colors">
                         Confirm
                     </button>
                 </div>
             </div>
 
             <!-- Card 2: Offline -->
-            <div class="card bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-4 flex flex-col transition-all duration-300 hover:border-red-500 hover:shadow-2xl hover:shadow-red-500/10">
+            <div
+                class="card bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-4 flex flex-col transition-all duration-300 hover:border-red-500 hover:shadow-2xl hover:shadow-red-500/10">
                 <div class="flex items-center justify-between mb-3">
                     <h3 class="font-semibold text-base text-white">Ruang Dua</h3>
                     <i class="fas fa-desktop text-gray-400"></i>
                 </div>
-                <div class="text-xs text-gray-400 mb-4 flex items-center">
-                    <i class="fas fa-globe text-gray-400"></i>
-                    <p class="ml-2">129.123.99</p>
+                <div
+                    class="self-start text-sm font-medium mb-4 flex items-center px-2 py-1 rounded-md">
+                    <i class="fas fa-globe mr-2"></i>
+                    <p>129.123.99</p>
                 </div>
                 <div class="mt-auto flex items-center justify-between">
-                     <div class="flex items-center space-x-2">
+                    <div class="flex items-center space-x-2">
                         <div class="w-2.5 h-2.5 rounded-full bg-red-500 status-glow-red"></div>
                         <span class="text-xs font-medium text-red-400">Offline</span>
                     </div>
-                    <button class="button-primary text-xs font-semibold text-gray-400 bg-gray-700/50 hover:bg-gray-700 px-3 py-1.5 rounded-lg transition-colors">
+                    <button class="button-primary text-xs font-semibold rounded-lg transition-colors">
                         Confirm
                     </button>
                 </div>
             </div>
 
             <!-- Card 3: Online -->
-            <div class="card bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-4 flex flex-col transition-all duration-300 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/10">
+            <div
+                class="card bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-4 flex flex-col transition-all duration-300 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/10">
                 <div class="flex items-center justify-between mb-3">
                     <h3 class="font-semibold text-base text-white">Ruang Tiga</h3>
                     <i class="fas fa-desktop text-gray-400"></i>
                 </div>
-                <div class="text-xs text-gray-400 mb-4 flex items-center">
-                    <i class="fas fa-globe text-gray-400"></i>
-                    <p class="ml-2">129.123.99</p>
+                <div
+                    class="self-start text-sm font-medium mb-4 flex items-center px-2 py-1 rounded-md">
+                    <i class="fas fa-globe mr-2"></i>
+                    <p>129.123.99</p>
                 </div>
                 <div class="mt-auto flex items-center justify-between">
-                     <div class="flex items-center space-x-2">
+                    <div class="flex items-center space-x-2">
                         <div class="w-2.5 h-2.5 rounded-full bg-green-500 status-glow-green"></div>
                         <span class="text-xs font-medium text-green-400">Online</span>
                     </div>
-                    <button class="button-primary text-xs font-semibold text-gray-400 bg-gray-700/50 hover:bg-gray-700 px-3 py-1.5 rounded-lg transition-colors">
+                    <button class="button-primary text-xs font-semibold rounded-lg transition-colors">
                         Confirm
                     </button>
                 </div>
             </div>
 
             <!-- Card 4: Online -->
-            <div class="card bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-4 flex flex-col transition-all duration-300 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/10">
+            <div
+                class="card bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-4 flex flex-col transition-all duration-300 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/10">
                 <div class="flex items-center justify-between mb-3">
                     <h3 class="font-semibold text-base text-white">Ruang Empat</h3>
                     <i class="fas fa-desktop text-gray-400"></i>
                 </div>
-                <div class="text-xs text-gray-400 mb-4 flex items-center">
-                    <i class="fas fa-globe text-gray-400"></i>
-                    <p class="ml-2">129.123.99</p>
+                <div
+                    class="self-start text-sm font-medium mb-4 flex items-center px-2 py-1 rounded-md">
+                    <i class="fas fa-globe mr-2"></i>
+                    <p>129.123.99</p>
                 </div>
                 <div class="mt-auto flex items-center justify-between">
-                     <div class="flex items-center space-x-2">
+                    <div class="flex items-center space-x-2">
                         <div class="w-2.5 h-2.5 rounded-full bg-green-500 status-glow-green"></div>
-                        <span class="text-sm font-medium text-green-400">Online</span>
+                        <span class="text-xs font-medium text-green-400">Online</span>
                     </div>
-                    <button class="button-primary text-xs font-semibold text-gray-400 bg-gray-700/50 hover:bg-gray-700 px-3 py-1.5 rounded-lg transition-colors">
+                    <button class="button-primary text-xs font-semibold rounded-lg transition-colors">
                         Confirm
                     </button>
                 </div>
             </div>
 
-             <!-- Card 5: Online -->
-            <div class="card bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-4 flex flex-col transition-all duration-300 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/10">
+            <!-- Card 5: Online -->
+            <div
+                class="card bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-4 flex flex-col transition-all duration-300 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/10">
                 <div class="flex items-center justify-between mb-3">
                     <h3 class="font-semibold text-base text-white">Ruang Lima</h3>
                     <i class="fas fa-desktop text-gray-400"></i>
                 </div>
-                <div class="text-xs text-gray-400 mb-4 flex items-center">
-                    <i class="fas fa-globe text-gray-400"></i>
-                    <p class="ml-2">129.123.99</p>
+                <div
+                    class="self-start text-sm font-medium mb-4 flex items-center px-2 py-1 rounded-md">
+                    <i class="fas fa-globe mr-2"></i>
+                    <p>129.123.99</p>
                 </div>
                 <div class="mt-auto flex items-center justify-between">
-                     <div class="flex items-center space-x-2">
+                    <div class="flex items-center space-x-2">
                         <div class="w-2.5 h-2.5 rounded-full bg-green-500 status-glow-green"></div>
-                        <span class="text-sm font-medium text-green-400">Online</span>
+                        <span class="text-xs font-medium text-green-400">Online</span>
                     </div>
-                    <button class="button-primary text-xs font-semibold text-gray-400 bg-gray-700/50 hover:bg-gray-700 px-3 py-1.5 rounded-lg transition-colors">
+                    <button class="button-primary text-xs font-semibold rounded-lg transition-colors">
                         Confirm
                     </button>
                 </div>
             </div>
 
             <!-- Card 6: Online -->
-            <div class="card bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-4 flex flex-col transition-all duration-300 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/10">
+            <div
+                class="card bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-4 flex flex-col transition-all duration-300 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/10">
                 <div class="flex items-center justify-between mb-3">
                     <h3 class="font-semibold text-base text-white">Ruang Enam</h3>
                     <i class="fas fa-desktop text-gray-400"></i>
                 </div>
-                <div class="text-xs text-gray-400 mb-4 flex items-center">
-                    <i class="fas fa-globe text-gray-400"></i>
-                    <p class="ml-2">129.123.99</p>
+                <div
+                    class="self-start text-sm font-medium mb-4 flex items-center px-2 py-1 rounded-md">
+                    <i class="fas fa-globe mr-2"></i>
+                    <p>129.123.99</p>
                 </div>
                 <div class="mt-auto flex items-center justify-between">
-                     <div class="flex items-center space-x-2">
+                    <div class="flex items-center space-x-2">
                         <div class="w-2.5 h-2.5 rounded-full bg-green-500 status-glow-green"></div>
-                        <span class="text-sm font-medium text-green-400">Online</span>
+                        <span class="text-xs font-medium text-green-400">Online</span>
                     </div>
-                    <button class="button-primary text-xs font-semibold text-gray-400 bg-gray-700/50 hover:bg-gray-700 px-3 py-1.5 rounded-lg transition-colors">
+                    <button class="button-primary text-xs font-semibold rounded-lg transition-colors">
                         Confirm
                     </button>
                 </div>
             </div>
 
-             <!-- Card 7: Offline -->
-            <div class="card bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-4 flex flex-col transition-all duration-300 hover:border-red-500 hover:shadow-2xl hover:shadow-red-500/10">
+            <!-- Card 7: Offline -->
+            <div
+                class="card bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-4 flex flex-col transition-all duration-300 hover:border-red-500 hover:shadow-2xl hover:shadow-red-500/10">
                 <div class="flex items-center justify-between mb-3">
                     <h3 class="font-semibold text-base text-white">Ruang Tujuh</h3>
                     <i class="fas fa-desktop text-gray-400"></i>
                 </div>
-                <div class="text-xs text-gray-400 mb-4 flex items-center">
-                    <i class="fas fa-globe text-gray-400"></i>
-                    <p class="ml-2">129.123.99</p>
+                <div
+                    class="self-start text-sm font-medium mb-4 flex items-center px-2 py-1 rounded-md">
+                    <i class="fas fa-globe mr-2"></i>
+                    <p>129.123.99</p>
                 </div>
                 <div class="mt-auto flex items-center justify-between">
-                     <div class="flex items-center space-x-2">
+                    <div class="flex items-center space-x-2">
                         <div class="w-2.5 h-2.5 rounded-full bg-red-500 status-glow-red"></div>
                         <span class="text-xs font-medium text-red-400">Offline</span>
                     </div>
-                    <button class="button-primary text-xs font-semibold text-gray-400 bg-gray-700/50 hover:bg-gray-700 px-3 py-1.5 rounded-lg transition-colors">
+                    <button class="button-primary text-xs font-semibold rounded-lg transition-colors">
                         Confirm
                     </button>
                 </div>
             </div>
 
             <!-- Card 8: Online -->
-            <div class="card bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-4 flex flex-col transition-all duration-300 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/10">
+            <div
+                class="card bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-4 flex flex-col transition-all duration-300 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/10">
                 <div class="flex items-center justify-between mb-3">
                     <h3 class="font-semibold text-base text-white">Ruang Delapan</h3>
                     <i class="fas fa-desktop text-gray-400"></i>
                 </div>
-                <div class="text-xs text-gray-400 mb-4 flex items-center">
-                    <i class="fas fa-globe text-gray-400"></i>
-                    <p class="ml-2">129.123.99</p>
+                <div
+                    class="self-start text-sm font-medium mb-4 flex items-center px-2 py-1 rounded-md">
+                    <i class="fas fa-globe mr-2"></i>
+                    <p>129.123.99</p>
                 </div>
                 <div class="mt-auto flex items-center justify-between">
-                     <div class="flex items-center space-x-2">
+                    <div class="flex items-center space-x-2">
                         <div class="w-2.5 h-2.5 rounded-full bg-green-500 status-glow-green"></div>
                         <span class="text-xs font-medium text-green-400">Online</span>
                     </div>
-                    <button class="button-primary text-xs font-semibold text-gray-400 bg-gray-700/50 hover:bg-gray-700 px-3 py-1.5 rounded-lg transition-colors">
+                    <button class="button-primary text-xs font-semibold rounded-lg transition-colors">
                         Confirm
                     </button>
                 </div>
@@ -204,4 +221,5 @@
     </div>
 
 </body>
+
 </html>

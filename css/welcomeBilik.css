@@ -1,9 +1,10 @@
 @import "./global.css";
 
 body {
+  display: flex;
+  align-items: center;
   overflow-y: auto !important; /* Allow vertical scroll */
 }
-
 
 .status-glow-green {
   box-shadow: 0 0 8px 2px rgba(34, 197, 94, 0.5);
@@ -11,20 +12,29 @@ body {
 .status-glow-red {
   box-shadow: 0 0 8px 2px rgba(239, 68, 68, 0.5);
 }
+.card {
+  background-color: var(--surface-1);
+}
+
+.self-start {
+  background-color: var(--surface-2);
+}
 
 /* Custom card hover effects */
 
 .button-primary {
+  display: flex;
+  justify-items: center;
   position: relative;
   overflow: hidden;
-  background-color: var(--button-primary-background);
-  color: var(--text-primary);
-  padding: 0.75rem 1.5rem;
+  background-color: var(--interactive-primary-background);
+  color: var(--interactive-primary-text);
+  padding: 0.7rem 1rem;
   border-radius: 0.5rem;
   text-decoration: none;
   font-weight: bold;
   display: inline-block;
-  box-shadow: 0 4px var(--button-primary-shadow);
+  box-shadow: 0 4px var(--interactive-shadow);
   transition: transform 0.1s ease, box-shadow 0.3s ease;
 }
 
@@ -45,7 +55,8 @@ body {
 }
 
 .button-primary:hover:not(:disabled) {
-  box-shadow: 0 4px var(--button-primary-shadow), 0 0 20px 1px #34b1c262;
+  box-shadow: 0 4px var(--interactive-shadow), 0 0 20px 1px #34b1c262;
+  cursor: pointer;
 }
 
 .button-primary:hover:not(:disabled)::before {
@@ -54,5 +65,5 @@ body {
 
 .button-primary:active:not(:disabled) {
   transform: translateY(4px);
-  box-shadow: 0 0px var(--button-primary-shadow);
+  box-shadow: 0 0px var(--interactive-shadow);
 }

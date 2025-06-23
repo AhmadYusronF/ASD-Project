@@ -1,11 +1,46 @@
 @import url(global.css);
 
+
+:root {
+  /* --- Core Palette --- */
+  --color-brand-primary: #00b8d4; /* A slightly brighter, more vibrant cyan for key highlights */
+  --color-brand-secondary: #00e1ff; /* A lighter version for interactive states like hover */
+
+  /* --- Backgrounds & Surfaces --- */
+  --surface-background: #030815; /* The darkest color, used for the main body background */
+  --surface-1: #0a0e23; /* A slightly lighter dark blue for layered surfaces */
+  --surface-2: #1c2a54; /* The color for cards, modals, and elevated elements */
+  --surface-gradient: linear-gradient(
+    160deg,
+    var(--surface-1) 0%,
+    var(--surface-background) 100%
+  );
+
+  /* --- Text --- */
+  --text-primary: #f8fafc; /* Using a slightly off-white (slate-50) is often softer on the eyes */
+  --text-secondary: #94a3b8; /* Slate 400 - WCAG AA compliant on --surface-2 */
+  --text-brand: var(--color-brand-primary);
+
+  /* --- Borders --- */
+  --border-subtle: #ffffff1a; /* A subtle white with alpha for dividing lines */
+  --border-interactive: #ffffff3d; /* A slightly stronger border for interactive element outlines */
+
+  /* --- Buttons & Interactive Elements --- */
+  --interactive-primary-background: var(--color-brand-primary);
+  --interactive-primary-text: #030815; /* High contrast against the button background */
+  --interactive-primary-hover-background: var(--color-brand-secondary);
+  --interactive-shadow: 0 4px 14px 0 #005a6980; /* A more defined shadow using brand color */
+
+  /* --- Font --- */
+  font-family: "Poppins", sans-serif;
+}
+
 .background-shape {
   position: absolute;
   border-radius: 9999px;
   opacity: 0.7;
   filter: blur(140px);
-  background: linear-gradient(to right, #8a2be2, #4169e1);
+  background: var(--surface-gradient);
   z-index: 0;
 }
 
@@ -13,19 +48,19 @@
 .login-form-container {
   background-image: url(../images/background-image.svg);
   backdrop-filter: blur(12px);
-  border: 1px solid var(--card-border-color);
+  border: 1px solid var();
 }
 
 .form-input {
   background-color: transparent;
-  border: 1px solid var(--text-secondary);
-  color: #e0e7ff;
+  border: 1px solid var(--border-interactive);
+  color: var(--text-primary);
   transition: border-color 0.3s ease;
 }
 
 .form-input:focus {
   outline: none;
-  border-color: var(--highlight-color);
+  border-color: var(--color-brand-primary);
 }
 
 .instruction-text {
@@ -36,14 +71,14 @@
 .primary-button {
   position: relative;
   overflow: hidden;
-  background-color: var(--button-primary-background);
+  background-color: var(--interactive-primary-background);
   color: var(--text-primary);
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
   text-decoration: none;
   font-weight: bold;
   display: inline-block;
-  box-shadow: 0 4px var(--button-primary-shadow);
+  box-shadow: 0 4px var(--interactive-shadow);
   transition: transform 0.1s ease, box-shadow 0.3s ease;
 }
 
@@ -64,7 +99,7 @@
 }
 
 .primary-button:hover {
-  box-shadow: 0 4px var(--button-primary-shadow), 0 0 20px 1px #34b1c262;
+  box-shadow: 0 4px var(--interactive-shadow), 0 0 20px 1px #34b1c262;
 }
 
 .primary-button:hover::before {
@@ -73,6 +108,6 @@
 
 .primary-button:active {
   transform: translateY(4px);
-  box-shadow: 0 0px var(--button-primary-shadow);
+  box-shadow: 0 0px var(--interactive-shadow);
 }
 

@@ -1,0 +1,179 @@
+:root {
+  /* --- Core Palette --- */
+  --color-brand-primary: #00b8d4; /* A slightly brighter, more vibrant cyan for key highlights */
+  --color-brand-secondary: #00e1ff; /* A lighter version for interactive states like hover */
+
+  /* --- Backgrounds & Surfaces --- */
+  --surface-background: #030815; /* The darkest color, used for the main body background */
+  --surface-1: #0a0e23; /* A slightly lighter dark blue for layered surfaces */
+  --surface-2: #1c2a54; /* The color for cards, modals, and elevated elements */
+  --surface-gradient: linear-gradient(
+    160deg,
+    var(--surface-1) 0%,
+    var(--surface-background) 100%
+  );
+
+  /* --- Text --- */
+  --text-primary: #f8fafc; /* Using a slightly off-white (slate-50) is often softer on the eyes */
+  --text-secondary: #94a3b8; /* Slate 400 - WCAG AA compliant on --surface-2 */
+  --text-brand: var(--color-brand-primary);
+
+  /* --- Borders --- */
+  --border-subtle: #ffffff1a; /* A subtle white with alpha for dividing lines */
+  --border-interactive: #ffffff3d; /* A slightly stronger border for interactive element outlines */
+
+  /* --- Buttons & Interactive Elements --- */
+  --interactive-primary-background: var(--color-brand-primary);
+  --interactive-primary-text: #030815; /* High contrast against the button background */
+  --interactive-primary-hover-background: var(--color-brand-secondary);
+  --interactive-shadow: 0 4px 14px 0 #005a6980; /* A more defined shadow using brand color */
+
+  /* --- Font --- */
+  font-family: "Poppins", sans-serif;
+}
+
+/* --- START: CSS CUSTOMIZATION --- */
+:root {
+  --sidebar-collapsed-width: 4.5rem;
+  /* 80px */
+  --sidebar-expanded-width: 14.5rem;
+  /* 256px */
+}
+
+/* --- END: CSS CUSTOMIZATION --- */
+
+/* Custom styles for the dashboard */
+body {
+  background-color: var();
+  overflow: auto;
+}
+
+/* Sidebar transition */
+.sidebar {
+  width: var(--sidebar-collapsed-width);
+  transition: width 0.3s ease-in-out;
+}
+
+/* Sidebar expansion on hover, only if not manually collapsed */
+.sidebar.collapsed:hover {
+  width: var(--sidebar-expanded-width);
+}
+
+/* Keep sidebar expanded if not collapsed */
+.sidebar:not(.collapsed) {
+  width: var(--sidebar-expanded-width);
+}
+
+/* --- New rule for nav font size --- */
+.sidebar nav {
+  font-size: small;
+}
+
+/* Styles for sidebar content visibility */
+.nav-item-content {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.sidebar.collapsed .nav-item-content {
+  display: none;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, height 0.3s ease, visibility 0s linear 0.3s;
+}
+
+/* When hovered, content inside becomes visible */
+.sidebar.collapsed:hover .nav-item-content {
+  display: flex;
+  visibility: visible;
+  height: auto;
+  transition: opacity 0.3s ease, height 0.3s ease, visibility 0s;
+}
+
+#components-ellipsis {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.sidebar.collapsed #components-text {
+  display: none;
+}
+
+.sidebar.sidebar.collapsed:hover #components-text {
+  display: flex;
+}
+
+.sidebar.collapsed #components-ellipsis {
+  opacity: 1;
+  width: auto;
+}
+
+/* Hide ellipsis when sidebar is expanded on hover */
+.sidebar.collapsed:hover #components-ellipsis {
+  opacity: 0;
+  width: 0;
+}
+
+#sidebar-toggle-button {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#sidebar-toggle-button .icon {
+  position: absolute;
+  font-size: 1.1rem;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#sidebar-toggle-button .fa-bars {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+#sidebar-toggle-button .fa-ellipsis-v {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.5);
+}
+
+#sidebar-toggle-button.active .fa-bars {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.5);
+}
+
+#sidebar-toggle-button.active .fa-ellipsis-v {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+/* Custom scrollbar for aesthetics */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Main content padding transition */
+#main-content {
+  transition: padding-left 0.3s ease-in-out;
+}
